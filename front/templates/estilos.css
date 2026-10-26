@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #e3f2fd
+        );
+
+    color: #222;
+}
+
+
+/* =========================
+ENCABEZADO
+   ========================= */
+
+header {
+    text-align: center;
+
+    padding: 25px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2930ec,
+            #8185f1
+        );
+
+    color: white;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.2);
+}
+.co {
+    color: yellow;
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 34px;
+}
+
+header p {
+    margin: 8px 0 0;
+
+    font-size: 17px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CONTENEDOR DEL MAPA
+   ========================= */
+
+.contenedor-mapa {
+
+    position: relative;
+
+    width: min(
+        95vw,
+        650px
+    );
+
+    margin: 35px auto;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #cfe3ef;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================
+   IMAGEN
+   ========================= */
+
+.mapa {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: gray;
+}
+
+/* =========================
+   ZONAS CLICABLES
+   ========================= */
+
+.zona {
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 30px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border: 2px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 50%;
+
+    background:
+        rgba(20, 120, 70, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+    padding: 0;
+
+    z-index: 10;
+}
+
+
+/* Hover */
+
+.zona:hover {
+
+    width: 42px;
+
+    height: 42px;
+
+    background:
+        rgba(20, 150, 80, 0.55);
+
+    border-color: white;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(255, 255, 255, 0.25),
+
+        0 5px 15px
+        rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* Cuando se presiona */
+
+.zona:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.85);
+
+}
+
+
+/* Islas */
+
+.zona-islas {
+
+    width: 24px;
+
+    height: 24px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+   ========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #555;
+}
+
+
+/* =========================
+   CELULARES
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    .contenedor-mapa {
+
+        width: 96vw;
+
+        margin-top: 20px;
+
+    }
+
+
+    .zona {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+
+    .zona:hover {
+
+        width: 34px;
+
+        height: 34px;
+
+    }
+
+}

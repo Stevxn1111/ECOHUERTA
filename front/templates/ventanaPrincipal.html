@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colombia Interactiva</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><span class="co">co</span> ECOHUERTA Colombia Interactiva</h1>
+        <p>HOLA EXPLORADOR</p>
+        <p>Conoce de las maravillas de Colombia donde con un solo clic puedes explorar toda su bella flora.</p>
+    </header>
+
+    <h2>Mapa Interactivo de Colombia</h2>
+    <p>Interactua aqui</p>
+    <main class="contenedor-mapa">
+
+        <!-- IMAGEN DEL MAPA -->
+        <img
+            src="mapa-colombia.png"
+            class="mapa"
+            alt="Mapa de Colombia"
+        >
+
+
+        <!-- ========================= -->
+        <!-- BOTONES SOBRE EL MAPA      -->
+        <!-- ========================= -->
+
+        <!-- LA GUAJIRA -->
+        <button
+            class="zona"
+            style="left: 53%; top: 10%;"
+            onclick="abrir('la_guajira')"
+            title="La Guajira">
+        </button>
+
+
+        <!-- ATLÁNTICO -->
+        <button
+            class="zona"
+            style="left: 35%; top: 15%;"
+            onclick="abrir('atlantico')"
+            title="Atlántico">
+        </button>
+
+
+        <!-- MAGDALENA -->
+        <button
+            class="zona"
+            style="left: 43%; top: 17%;"
+            onclick="abrir('magdalena')"
+            title="Magdalena">
+        </button>
+
+
+        <!-- CESAR -->
+        <button
+            class="zona"
+            style="left: 51%; top: 21%;"
+            onclick="abrir('cesar')"
+            title="Cesar">
+        </button>
+
+
+        <!-- SUCRE -->
+        <button
+            class="zona"
+            style="left: 34%; top: 25%;"
+            onclick="abrir('sucre')"
+            title="Sucre">
+        </button>
+
+
+        <!-- CÓRDOBA -->
+        <button
+            class="zona"
+            style="left: 27%; top: 28%;"
+            onclick="abrir('cordoba')"
+            title="Córdoba">
+        </button>
+
+
+        <!-- BOLÍVAR -->
+        <button
+            class="zona"
+            style="left: 39%; top: 29%;"
+            onclick="abrir('bolivar')"
+            title="Bolívar">
+        </button>
+
+
+        <!-- NORTE DE SANTANDER -->
+        <button
+            class="zona"
+            style="left: 55%; top: 30%;"
+            onclick="abrir('norte_de_santander')"
+            title="Norte de Santander">
+        </button>
+
+
+        <!-- ANTIOQUIA -->
+        <button
+            class="zona"
+            style="left: 30%; top: 38%;"
+            onclick="abrir('antioquia')"
+            title="Antioquia">
+        </button>
+
+
+        <!-- SANTANDER -->
+        <button
+            class="zona"
+            style="left: 46%; top: 37%;"
+            onclick="abrir('santander')"
+            title="Santander">
+        </button>
+
+
+        <!-- ARAUCA -->
+        <button
+            class="zona"
+            style="left: 67%; top: 36%;"
+            onclick="abrir('arauca')"
+            title="Arauca">
+        </button>
+
+
+        <!-- CHOCÓ -->
+        <button
+            class="zona"
+            style="left: 20%; top: 39%;"
+            onclick="abrir('choco')"
+            title="Chocó">
+        </button>
+
+
+        <!-- CALDAS -->
+        <button
+            class="zona"
+            style="left: 35%; top: 44%;"
+            onclick="abrir('caldas')"
+            title="Caldas">
+        </button>
+
+
+        <!-- RISARALDA -->
+        <button
+            class="zona"
+            style="left: 29%; top: 46%;"
+            onclick="abrir('risaralda')"
+            title="Risaralda">
+        </button>
+
+
+        <!-- QUINDÍO -->
+        <button
+            class="zona"
+            style="left: 34%; top: 48%;"
+            onclick="abrir('quindio')"
+            title="Quindío">
+        </button>
+
+
+        <!-- CUNDINAMARCA -->
+        <button
+            class="zona"
+            style="left: 43%; top: 46%;"
+            onclick="abrir('cundinamarca')"
+            title="Cundinamarca">
+        </button>
+
+
+        <!-- BOYACÁ -->
+        <button
+            class="zona"
+            style="left: 49%; top: 43%;"
+            onclick="abrir('boyaca')"
+            title="Boyacá">
+        </button>
+
+
+        <!-- VALLE DEL CAUCA -->
+        <button
+            class="zona"
+            style="left: 24%; top: 52%;"
+            onclick="abrir('valle_del_cauca')"
+            title="Valle del Cauca">
+        </button>
+
+
+        <!-- TOLIMA -->
+        <button
+            class="zona"
+            style="left: 38%; top: 53%;"
+            onclick="abrir('tolima')"
+            title="Tolima">
+        </button>
+
+
+        <!-- META -->
+        <button
+            class="zona"
+            style="left: 52%; top: 55%;"
+            onclick="abrir('meta')"
+            title="Meta">
+        </button>
+
+
+        <!-- HUILA -->
+        <button
+            class="zona"
+            style="left: 39%; top: 60%;"
+            onclick="abrir('huila')"
+            title="Huila">
+        </button>
+
+
+        <!-- CAUCA -->
+        <button
+            class="zona"
+            style="left: 27%; top: 61%;"
+            onclick="abrir('cauca')"
+            title="Cauca">
+        </button>
+
+
+        <!-- CASANARE -->
+        <button
+            class="zona"
+            style="left: 60%; top: 44%;"
+            onclick="abrir('casanare')"
+            title="Casanare">
+        </button>
+
+
+        <!-- VICHADA -->
+        <button
+            class="zona"
+            style="left: 75%; top: 44%;"
+            onclick="abrir('vichada')"
+            title="Vichada">
+        </button>
+
+
+        <!-- GUAVIARE -->
+        <button
+            class="zona"
+            style="left: 53%; top: 67%;"
+            onclick="abrir('guaviare')"
+            title="Guaviare">
+        </button>
+
+
+        <!-- NARIÑO -->
+        <button
+            class="zona"
+            style="left: 21%; top: 66%;"
+            onclick="abrir('narino')"
+            title="Nariño">
+        </button>
+
+
+        <!-- PUTUMAYO -->
+        <button
+            class="zona"
+            style="left: 32%; top: 69%;"
+            onclick="abrir('putumayo')"
+            title="Putumayo">
+        </button>
+
+
+        <!-- CAQUETÁ -->
+        <button
+            class="zona"
+            style="left: 45%; top: 69%;"
+            onclick="abrir('caqueta')"
+            title="Caquetá">
+        </button>
+
+
+        <!-- GUAINÍA -->
+        <button
+            class="zona"
+            style="left: 78%; top: 61%;"
+            onclick="abrir('guainia')"
+            title="Guainía">
+        </button>
+
+
+        <!-- VAUPÉS -->
+        <button
+            class="zona"
+            style="left: 62%; top: 73%;"
+            onclick="abrir('vaupes')"
+            title="Vaupés">
+        </button>
+
+
+        <!-- AMAZONAS -->
+        <button
+            class="zona"
+            style="left: 55%; top: 83%;"
+            onclick="abrir('amazonas')"
+            title="Amazonas">
+        </button>
+
+
+        <!-- SAN ANDRÉS -->
+        <button
+            class="zona zona-islas"
+            style="left: 17%; top: 13%;"
+            onclick="abrir('san_andres')"
+            title="San Andrés y Providencia">
+        </button>
+
+    </main>
+
+
+    <footer>
+        <p>Mapa interactivo de Colombia</p>
+    </footer>
+
+
+<script>
+
+function abrir(departamento) {
+    window.location.href = "/departamento/" + departamento;
+}
+
+</script>
+
+</body>
+</html>

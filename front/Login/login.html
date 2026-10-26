@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECOHUERTA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="sun"></div>
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <span class="star"></span>
+  <span class="star"></span>
+  <span class="star"></span>
+  <span class="star"></span>
+  <span class="star"></span>
+
+  <div class="card">
+    <div class="mascot-wrap">
+      <!-- Muñeco astronauta-->
+      <svg width="140" height="130" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="70" cy="118" rx="30" ry="7" fill="#3E2C41" opacity="0.12"/>
+        <!-- cuerpo -->
+        <rect x="45" y="60" width="50" height="46" rx="20" fill="#FF6B9D"/>
+        <circle cx="70" cy="83" r="10" fill="#FFD93D"/>
+        <!-- brazos -->
+        <circle cx="38" cy="75" r="11" fill="#FF6B9D"/>
+        <circle cx="102" cy="75" r="11" fill="#FF6B9D"/>
+        <!-- casco -->
+        <circle cx="70" cy="45" r="34" fill="#FFFDF7" stroke="#3E2C41" stroke-width="3"/>
+        <circle cx="70" cy="47" r="24" fill="#8FE3FF"/>
+        <!-- cara -->
+        <circle cx="61" cy="45" r="4" fill="#3E2C41"/>
+        <circle cx="79" cy="45" r="4" fill="#3E2C41"/>
+        <path d="M60 56 Q70 64 80 56" stroke="#3E2C41" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- antena -->
+        <line x1="70" y1="11" x2="70" y2="2" stroke="#3E2C41" stroke-width="3"/>
+        <circle cx="70" cy="2" r="4" fill="#6BCB77"/>
+      </svg>
+    </div>
+
+    <div class="greeting">
+      <h1>¡Hola, aventurero!</h1>
+      <p>Elige tu avatar y entra a la aventura</p>
+    </div>
+
+    <div class="avatar-row" role="group" aria-label="Elige tu avatar">
+      <button type="button" class="avatar-option selected" aria-pressed="true">🦊</button>
+      <button type="button" class="avatar-option" aria-pressed="false">🐸</button>
+      <button type="button" class="avatar-option" aria-pressed="false">🐼</button>
+      <button type="button" class="avatar-option" aria-pressed="false">🦄</button>
+    </div>
+
+    <form onsubmit="return false;">
+      <div>
+        <label for="user">Tu nombre de explorador</label>
+        <div class="field">
+          <span class="icon">🧑‍🚀</span>
+          <input id="user" name="user" type="text" placeholder="Ej: SuperLuna22" autocomplete="username">
+        </div>
+      </div>
+
+      <div>
+        <label for="pass">Tu palabra secreta</label>
+        <div class="field">
+          <span class="icon">🔑</span>
+          <input id="pass" name="pass" type="password" placeholder="••••••••" autocomplete="current-password">
+          <button type="button" class="toggle-pass" aria-label="Mostrar palabra secreta" onclick="
+            const i=document.getElementById('pass');
+            i.type = i.type === 'password' ? 'text' : 'password';
+            this.textContent = i.type === 'password' ? '👁️' : '🙈';
+          ">👁️</button>
+        </div>
+      </div>
+
+      <div class="forgot">
+        <a href="#">¿Olvidaste tu palabra secreta?</a>
+      </div>
+
+      <button type="submit" class="enter-btn">¡Entrar a la aventura! 🚀</button>
+    </form>
+
+    <p class="signup">¿Primera vez aquí? <a href="registro.html">Crea tu cuenta</a></p>
+  </div>
+
+  <script>
+    // Selección de avatar
+    document.querySelectorAll('.avatar-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.avatar-option').forEach(b => {
+          b.classList.remove('selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+
+</body>
+</html>

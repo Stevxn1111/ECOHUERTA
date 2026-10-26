@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ p.nombre }} - ECOHUERTA</title>
+    <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+
+    <nav>
+        <strong>ECOHUERTA</strong>
+    </nav>
+
+<a href="javascript:history.back()">‹ Volver</a>
+
+  <section class="planta">
+    <img src="/static/img/{{ p.imagen }}" alt="{{ p.nombre }}">
+    <div>
+      <h1>{{ p.nombre }}</h1>
+      <h3>Descripción</h3>     <p>{{ p.descripcion }}</p>
+      <h3>Características</h3> <p>{{ p.caracteristicas }}</p>
+      <h3>Cuidados</h3>        <p>{{ p.cuidados }}</p>
+      <h3>Beneficios</h3>      <p>{{ p.beneficios }}</p>
+    </div>
+  </section>
+
+  <section class="recursos">
+    <h3>Recursos relacionados</h3>
+    {% for r in recursos %}
+      <a href="{{ r.url }}" target="_blank">{{ r.titulo }}</a>
+    {% endfor %}
+  </section>
+</body>
+</html>
