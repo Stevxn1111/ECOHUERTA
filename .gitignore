@@ -1,5 +1,36 @@
+
+# Environment variables
 .env
+
+# Binaries
 *.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 *.bin
 *.out
+
+# Go test files
+*.test
+
+# Coverage and profiling
+coverage.html
+coverage.txt
+coverage.xml
+*.coverprofile
+profile.cov
+
+# Dependencies
+# vendor/
+
+# Go workspace
+go.work
+go.work.sum
+
+# Operating system
 .DS_Store
+
+# Editor/IDE
+.idea/
+.vscode/
