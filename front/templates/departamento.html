@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOHUERTA - Flora por Departamento</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="barra-superior-depto">
+            <button type="button" id="btnVolverMapa" class="btn-secundario">← Volver al mapa</button>
+            <div class="info-sesion-mini">
+                <span id="avatarDepto">🦊</span>
+                <span id="nombreDeptoUsuario">Explorador</span>
+                <span id="rolDeptoUsuario" class="rol-pill">estudiante</span>
+            </div>
+        </div>
+        <h1><span class="co">co</span> <span id="tituloDepartamento">Departamento</span></h1>
+        <p id="subtituloDepartamento">Explora las especies de flora registradas en este departamento.</p>
+    </header>
+
+    <main class="contenedor-departamento">
+        <section class="barra-filtros">
+            <label for="filtroTipo">Filtrar por tipo de planta:</label>
+            <select id="filtroTipo">
+                <option value="">Todos los tipos</option>
+            </select>
+            <span id="contadorPlantas" class="contador-plantas">0 plantas</span>
+            <button type="button" id="btnNuevaPlanta" class="btn-agregar-planta" style="display: none;">
+                + Agregar planta
+            </button>
+        </section>
+
+        <div id="estadoCarga" class="estado-mensaje">Cargando flora del departamento...</div>
+        <section id="gridPlantas" class="grid-plantas"></section>
+    </main>
+
+    <!-- Modal para crear / editar planta (Docente / Admin) -->
+    <div id="modalPlanta" class="modal-overlay" style="display: none;">
+        <div class="modal-contenido">
+            <div class="modal-cabecera">
+                <h2 id="tituloModalPlanta">Agregar nueva planta</h2>
+                <button type="button" id="btnCerrarModal" class="btn-cerrar-modal">✕</button>
+            </div>
+
+            <form id="formPlanta" class="form-planta">
+                <input type="hidden" id="plantaIdInput">
+
+                <div class="campo-form">
+                    <label for="plantaNombreInput">Nombre de la especie *</label>
+                    <input type="text" id="plantaNombreInput" required placeholder="Ej: Frailejón (Espeletia)">
+                </div>
+
+                <div class="fila-dos-campos">
+                    <div class="campo-form">
+                        <label for="plantaTipoInput">Tipo de planta *</label>
+                        <select id="plantaTipoInput" required></select>
+                    </div>
+                    <div class="campo-form">
+                        <label for="plantaDeptoInput">Departamento *</label>
+                        <select id="plantaDeptoInput" required></select>
+                    </div>
+                </div>
+
+                <div class="campo-form">
+                    <label for="plantaImagenInput">URL o nombre de imagen (opcional)</label>
+                    <input type="text" id="plantaImagenInput" placeholder="https://... o nombre.jpg">
+                </div>
+
+                <div class="campo-form">
+                    <label for="plantaDescInput">Descripción *</label>
+                    <textarea id="plantaDescInput" rows="2" required placeholder="Descripción general de la planta"></textarea>
+                </div>
+
+                <div class="campo-form">
+                    <label for="plantaCaracInput">Características</label>
+                    <textarea id="plantaCaracInput" rows="2" placeholder="Tamaño, hojas, flores, hábitat..."></textarea>
+                </div>
+
+                <div class="campo-form">
+                    <label for="plantaCuidadosInput">Cuidados</label>
+                    <textarea id="plantaCuidadosInput" rows="2" placeholder="Clima, riego, luz, tipo de suelo..."></textarea>
+                </div>
+
+                <div class="campo-form">
+                    <label for="plantaBeneficiosInput">Beneficios</label>
+                    <textarea id="plantaBeneficiosInput" rows="2" placeholder="Aporte ecológico, medicinal o alimenticio..."></textarea>
+                </div>
+
+                <p id="errorModalPlanta" class="error-form" style="display: none;"></p>
+
+                <div class="modal-acciones">
+                    <button type="button" id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" id="btnGuardarPlanta" class="btn-guardar">Guardar planta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>ECOHUERTA - Exploración de flora colombiana</p>
+    </footer>
+
+    <script src="../JavaScript/departamento.js"></script>
+</body>
+</html>

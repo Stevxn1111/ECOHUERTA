@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOHUERTA - Mapa Interactivo de Colombia</title>
+    <link rel="stylesheet" href="ventanaPrincipal.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="barra-usuario">
+            <div class="info-usuario">
+                <span id="avatarUsuario" class="avatar-badge">🦊</span>
+                <div>
+                    <strong id="nombreUsuario">Explorador</strong>
+                    <span id="rolUsuario" class="rol-badge">estudiante</span>
+                </div>
+            </div>
+            <div id="accionesAdmin" class="acciones-admin" style="display: none;">
+                <button type="button" id="btnEstudiantes" class="btn-admin">Estudiantes</button>
+                <button type="button" id="btnDocentes" class="btn-admin">Docentes</button>
+            </div>
+            <button type="button" id="btnCerrarSesion" class="btn-salir">Cerrar sesión</button>
+        </div>
+
+        <h1><span class="co">co</span> ECOHUERTA</h1>
+        <p>Explora la flora de Colombia y descubre sus maravillas</p>
+        <p id="saludoRol">HOLA EXPLORADOR</p>
+        <p>Conoce de las maravillas de Colombia donde con un solo clic puedes explorar toda su bella flora.</p>
+    </header>
+    <section class="video-container">
+    <h2>🌱 ¡Aprendamos sobre las plantas!</h2>
+    <p>Descubre el maravilloso mundo de las huertas.</p>
+
+    <iframe
+        src="https://www.youtube.com/embed/-1pHqK5YD7s"
+        title="Video educativo EcoHuerta"
+        allowfullscreen>
+    </iframe>
+</section>
+    
+
+    <h2>Mapa Interactivo de Colombia</h2>
+    <p>Selecciona un departamento en el mapa para ver sus plantas</p>
+
+    <main class="contenedor-mapa">
+        <img
+            src="mapa-colombia.png"
+            class="mapa"
+            alt="Mapa de Colombia"
+        >
+
+        <!-- BOTONES SOBRE EL MAPA -->
+        <button class="zona" style="left: 53%; top: 10%;" data-slug="la_guajira" title="La Guajira"></button>
+        <button class="zona" style="left: 35%; top: 15%;" data-slug="atlantico" title="Atlántico"></button>
+        <button class="zona" style="left: 43%; top: 17%;" data-slug="magdalena" title="Magdalena"></button>
+        <button class="zona" style="left: 51%; top: 21%;" data-slug="cesar" title="Cesar"></button>
+        <button class="zona" style="left: 34%; top: 25%;" data-slug="sucre" title="Sucre"></button>
+        <button class="zona" style="left: 27%; top: 28%;" data-slug="cordoba" title="Córdoba"></button>
+        <button class="zona" style="left: 39%; top: 29%;" data-slug="bolivar" title="Bolívar"></button>
+        <button class="zona" style="left: 55%; top: 30%;" data-slug="norte_de_santander" title="Norte de Santander"></button>
+        <button class="zona" style="left: 30%; top: 38%;" data-slug="antioquia" title="Antioquia"></button>
+        <button class="zona" style="left: 46%; top: 37%;" data-slug="santander" title="Santander"></button>
+        <button class="zona" style="left: 67%; top: 36%;" data-slug="arauca" title="Arauca"></button>
+        <button class="zona" style="left: 20%; top: 39%;" data-slug="choco" title="Chocó"></button>
+        <button class="zona" style="left: 35%; top: 44%;" data-slug="caldas" title="Caldas"></button>
+        <button class="zona" style="left: 29%; top: 46%;" data-slug="risaralda" title="Risaralda"></button>
+        <button class="zona" style="left: 34%; top: 48%;" data-slug="quindio" title="Quindío"></button>
+        <button class="zona" style="left: 43%; top: 46%;" data-slug="cundinamarca" title="Cundinamarca"></button>
+        <button class="zona" style="left: 44%; top: 50%;" data-slug="bogota_dc" title="Bogotá D.C."></button>
+        <button class="zona" style="left: 49%; top: 43%;" data-slug="boyaca" title="Boyacá"></button>
+        <button class="zona" style="left: 24%; top: 52%;" data-slug="valle_del_cauca" title="Valle del Cauca"></button>
+        <button class="zona" style="left: 38%; top: 53%;" data-slug="tolima" title="Tolima"></button>
+        <button class="zona" style="left: 52%; top: 55%;" data-slug="meta" title="Meta"></button>
+        <button class="zona" style="left: 39%; top: 60%;" data-slug="huila" title="Huila"></button>
+        <button class="zona" style="left: 27%; top: 61%;" data-slug="cauca" title="Cauca"></button>
+        <button class="zona" style="left: 60%; top: 44%;" data-slug="casanare" title="Casanare"></button>
+        <button class="zona" style="left: 75%; top: 44%;" data-slug="vichada" title="Vichada"></button>
+        <button class="zona" style="left: 53%; top: 67%;" data-slug="guaviare" title="Guaviare"></button>
+        <button class="zona" style="left: 21%; top: 66%;" data-slug="narino" title="Nariño"></button>
+        <button class="zona" style="left: 32%; top: 69%;" data-slug="putumayo" title="Putumayo"></button>
+        <button class="zona" style="left: 45%; top: 69%;" data-slug="caqueta" title="Caquetá"></button>
+        <button class="zona" style="left: 78%; top: 61%;" data-slug="guainia" title="Guainía"></button>
+        <button class="zona" style="left: 62%; top: 73%;" data-slug="vaupes" title="Vaupés"></button>
+        <button class="zona" style="left: 55%; top: 83%;" data-slug="amazonas" title="Amazonas"></button>
+        <button class="zona zona-islas" style="left: 17%; top: 13%;" data-slug="san_andres" title="San Andrés y Providencia"></button>
+    </main>
+
+    <footer>
+        <p>Mapa interactivo de Colombia</p>
+    </footer>
+
+    <script src="../JavaScript/ventanaPrincipal.js"></script>
+</body>
+
+</html>

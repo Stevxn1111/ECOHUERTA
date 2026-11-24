@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tituloPagina">Ficha de Planta - ECOHUERTA</title>
+    <link rel="stylesheet" href="plantas.css">
+</head>
+<body>
+
+    <header>
+        <div class="barra-superior-depto">
+            <button type="button" id="btnVolverDepto" class="btn-secundario">← Volver al departamento</button>
+            <div class="info-sesion-mini">
+                <span id="avatarPlanta">🦊</span>
+                <span id="nombreUsuarioPlanta">Explorador</span>
+                <span id="rolUsuarioPlanta" class="rol-pill">estudiante</span>
+            </div>
+        </div>
+        <h1><span class="co">co</span> ECOHUERTA - Ficha Botánica</h1>
+        <p id="subtituloPlanta">Información detallada de la especie</p>
+    </header>
+
+    <main class="contenedor-ficha-planta">
+        <div id="estadoPlanta" class="estado-mensaje">Cargando ficha de la planta...</div>
+
+        <section id="detallePlanta" class="ficha-planta" style="display: none;">
+            <div class="ficha-media">
+                <img id="imgPlantaDetalle" src="" alt="" class="img-ficha-planta" style="display: none;">
+                <div id="placeholderPlantaDetalle" class="img-ficha-placeholder">🌿</div>
+                <div class="etiquetas-planta">
+                    <span id="tipoPlantaDetalle" class="badge-tipo">Tipo</span>
+                    <span id="deptoPlantaDetalle" class="badge-depto">Departamento</span>
+                </div>
+            </div>
+
+            <div class="ficha-info">
+                <h2 id="nombrePlantaDetalle" class="titulo-ficha">Nombre de la planta</h2>
+
+                <div class="bloque-ficha">
+                    <h3>Descripción</h3>
+                    <p id="descPlantaDetalle"></p>
+                </div>
+
+                <div class="bloque-ficha">
+                    <h3>Características</h3>
+                    <p id="caracPlantaDetalle"></p>
+                </div>
+
+                <div class="bloque-ficha">
+                    <h3>Cuidados</h3>
+                    <p id="cuidadosPlantaDetalle"></p>
+                </div>
+
+                <div class="bloque-ficha">
+                    <h3>Beneficios</h3>
+                    <p id="beneficiosPlantaDetalle"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="seccionRecursos" class="recursos-ficha" style="display: none;">
+            <h3>Recursos relacionados</h3>
+            <div id="listaRecursos" class="lista-recursos"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>ECOHUERTA - Exploración de flora colombiana</p>
+    </footer>
+
+    <script src="../JavaScript/planta.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #e3f2fd
+        );
+
+    color: #222;
+}
+
+
+/* =========================
+ENCABEZADO
+   ========================= */
+
+header {
+    text-align: center;
+
+    padding: 25px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgb(32, 151, 32),
+            #8185f1
+        );
+
+    color: white;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.2);
+}
+.co {
+    color: yellow;
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 34px;
+}
+
+header p {
+    margin: 8px 0 0;
+
+    font-size: 17px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CONTENEDOR DEL MAPA
+   ========================= */
+
+.contenedor-mapa {
+
+    position: relative;
+
+    width: min(
+        95vw,
+        650px
+    );
+
+    margin: 35px auto;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #cfe3ef;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================
+   IMAGEN
+   ========================= */
+
+.mapa {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: gray;
+}
+
+/* =========================
+   ZONAS CLICABLES
+   ========================= */
+
+.zona {
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 30px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border: 2px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 50%;
+
+    background:
+        rgba(20, 120, 70, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+    padding: 0;
+
+    z-index: 10;
+}
+
+
+/* Hover */
+
+.zona:hover {
+
+    width: 42px;
+
+    height: 42px;
+
+    background:
+        rgba(20, 150, 80, 0.55);
+
+    border-color: white;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(255, 255, 255, 0.25),
+
+        0 5px 15px
+        rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* Cuando se presiona */
+
+.zona:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.85);
+
+}
+
+
+/* Islas */
+
+.zona-islas {
+
+    width: 24px;
+
+    height: 24px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+   ========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #555;
+}
+
+
+/* =========================
+   CELULARES
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    .contenedor-mapa {
+
+        width: 96vw;
+
+        margin-top: 20px;
+
+    }
+
+
+    .zona {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+
+    .zona:hover {
+
+        width: 34px;
+
+        height: 34px;
+
+    }
+
+}
+/* Tooltip flotante instantáneo sobre el mapa */
+.tooltip-mapa {
+    position: fixed;
+    background-color: #1b4332;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid #95d5b2;
+    transform: translate(12px, 12px);
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    white-space: nowrap;
+}
+
+.tooltip-mapa.visible {
+    opacity: 1;
+}
+/* =========================
+   VISTA DE DEPARTAMENTO Y PLANTAS
+   ========================= */
+
+.barra-superior-depto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto 16px;
+}
+
+.info-sesion-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.16);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.rol-pill {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    text-transform: capitalize;
+}
+
+.btn-secundario {
+    background: #ffffff;
+    color: #2930ec;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-secundario:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.contenedor-departamento {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 16px;
+}
+
+.barra-filtros {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 22px;
+}
+
+.barra-filtros label {
+    font-weight: bold;
+    color: #1b4332;
+}
+
+.barra-filtros select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.contador-plantas {
+    margin-left: auto;
+    font-weight: bold;
+    color: #2930ec;
+    font-size: 0.95rem;
+}
+
+.estado-mensaje {
+    text-align: center;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    color: #475569;
+}
+
+.grid-plantas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-planta {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-planta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.img-planta {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    display: block;
+}
+
+.img-planta-placeholder {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    background: linear-gradient(135deg, #d8f3dc, #e3f2fd);
+}
+
+.contenido-planta {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cabecera-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.cabecera-tarjeta h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #1e293b;
+}
+
+.badge-tipo {
+    background: #e8f5e9;
+    color: #1b4332;
+    border: 1px solid #95d5b2;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.desc-planta {
+    color: #475569;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin: 0 0 16px;
+    flex: 1;
+}
+
+.btn-ver-planta {
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2930ec, #5b62f6);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.btn-ver-planta:hover {
+    opacity: 0.92;
+}
+/* =========================
+   GESTIÓN DE PLANTAS (DOCENTE / ADMIN)
+   ========================= */
+
+.barra-filtros select {
+    min-width: 220px;
+}
+
+.btn-agregar-planta {
+    background: #1b4332;
+    color: #ffffff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-agregar-planta:hover {
+    background: #2d6a4f;
+    transform: translateY(-1px);
+}
+
+.acciones-docente-tarjeta {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-editar-planta,
+.btn-eliminar-planta {
+    flex: 1;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.btn-editar-planta {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.btn-eliminar-planta {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-editar-planta:hover,
+.btn-eliminar-planta:hover {
+    opacity: 0.88;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1200;
+}
+
+.modal-contenido {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.modal-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-cabecera h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.3rem;
+    color: #1e293b;
+}
+
+.btn-cerrar-modal {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.form-planta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fila-dos-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo-form label {
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: #334155;
+}
+
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+    padding: 9px 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.94rem;
+}
+
+.error-form {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.btn-cancelar {
+    background: #e2e8f0;
+    color: #334155;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-guardar {
+    background: #1b4332;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .fila-dos-campos {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   PANEL DE ADMINISTRADOR
+   ========================= */
+
+.tabla-admin-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-admin th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: bold;
+}
+
+.select-rol-usuario {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+}
+
+.panel-tipos-admin {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.panel-tipos-admin h2 {
+    margin: 0 0 14px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+
+.form-tipo-inline {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-tipo-inline input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.mensaje-admin {
+    margin: 10px 0 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.mensaje-admin.exito {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.mensaje-admin.error {
+    background: #fee2e2;
+    color: #b91c1c;
+}

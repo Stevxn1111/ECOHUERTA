@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tituloPaginaUsuarios">Administración - ECOHUERTA</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="barra-superior-depto">
+            <button type="button" id="btnVolverMapaAdmin" class="btn-secundario">← Volver al mapa</button>
+            <div class="info-sesion-mini">
+                <span id="avatarAdmin">🦊</span>
+                <span id="nombreAdmin">Administrador</span>
+                <span id="rolAdmin" class="rol-pill">admin</span>
+            </div>
+        </div>
+        <h1 id="tituloPanelUsuarios"><span class="co">co</span> Panel de Administración</h1>
+        <p id="subtituloPanelUsuarios">Gestión de usuarios y roles de ECOHUERTA</p>
+    </header>
+
+    <main class="contenedor-departamento">
+        <section class="barra-filtros">
+            <label for="filtroRolUsuario">Filtrar usuarios por rol:</label>
+            <select id="filtroRolUsuario">
+                <option value="todos">Todos los roles</option>
+                <option value="estudiante">Estudiantes</option>
+                <option value="docente">Docentes</option>
+                <option value="admin">Administradores</option>
+            </select>
+            <button type="button" id="btnNuevoUsuario" class="btn-agregar-planta">+ Nuevo usuario</button>
+            <span id="contadorUsuarios" class="contador-plantas">0 usuarios</span>
+        </section>
+
+        <section id="panelFormularioUsuario" class="panel-tipos-admin" style="display: none;">
+            <h2 id="tituloFormUsuario">Registrar nuevo usuario</h2>
+            <form id="formUsuarioAdmin" class="form-tipo-inline">
+                <input type="hidden" id="usuarioIdInput" value="">
+                <input type="text" id="usuarioNombreInput" placeholder="Nombre completo" required>
+                <input type="text" id="usuarioLoginInput" placeholder="Usuario (login)" required>
+                <input type="password" id="usuarioClaveInput" placeholder="Contraseña (mín. al crear)">
+                <select id="usuarioRolInput" required>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="docente">Docente</option>
+                    <option value="admin">Administrador</option>
+                </select>
+                <button type="submit" id="btnGuardarUsuario" class="btn-agregar-planta">Guardar</button>
+                <button type="button" id="btnCancelarUsuario" class="btn-secundario">Cancelar</button>
+            </form>
+            <p id="mensajeUsuarioAdmin" class="mensaje-admin" style="display: none;"></p>
+        </section>
+
+        <div id="estadoUsuarios" class="estado-mensaje">Cargando usuarios...</div>
+
+        <section class="tabla-admin-wrapper" id="contenedorTablaUsuarios" style="display: none;">
+            <table class="tabla-admin">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaUsuarios"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>ECOHUERTA - Panel administrativo</p>
+    </footer>
+
+    <script src="../JavaScript/usuarios.js"></script>
+</body>
+</html>

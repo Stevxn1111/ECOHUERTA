@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 15%, #fff3b0 0, transparent 18%),
+        radial-gradient(circle at 90% 80%, #b9e8a5 0, transparent 22%),
+        linear-gradient(135deg, #d9f5c5, #f4ffdf, #c8edb8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 15px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== DECORACIONES ===== */
+body::before {
+    content: "🌻";
+    position: absolute;
+    top: 7%;
+    left: 9%;
+    font-size: 65px;
+    transform: rotate(-15deg);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+body::after {
+    content: "🌱";
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+    font-size: 75px;
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    color: #287a37;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 900;
+    text-shadow: 2px 3px 0px #ffffff;
+}
+
+h1::before {
+    content: "🌿 ";
+}
+
+/* ===== TARJETA DEL FORMULARIO ===== */
+#registroForm {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 28px;
+    border: 4px solid #a5d88a;
+    box-shadow: 0 12px 0 #91c875,
+                0 18px 30px rgba(49, 105, 43, 0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== ETIQUETAS ===== */
+#registroForm label {
+    color: #387342;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ===== CAMPOS ===== */
+#registroForm input,
+#registroForm select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 21px;
+    border: 2px solid #d4eacb;
+    border-radius: 14px;
+    background: #f7fff3;
+    color: #315c36;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+#registroForm input:focus,
+#registroForm select:focus {
+    border-color: #64b84d;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px #dff4d5;
+    transform: scale(1.01);
+}
+
+/* ===== BOTÓN ===== */
+#registroForm button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #75c94f, #36a34a);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #267b36;
+    transition: 0.25s;
+}
+
+#registroForm button::before {
+    content: "🌼 ";
+}
+
+#registroForm button:hover {
+    background: linear-gradient(135deg, #8bd85d, #27963e);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #267b36;
+}
+
+#registroForm button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #267b36;
+}
+
+/* ===== MENSAJE ===== */
+#mensaje {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    margin-top: 20px;
+    color: #287a37;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* ===== ENLACE DE INICIO DE SESIÓN ===== */
+body > p:last-of-type {
+    margin-top: 22px;
+    text-align: center;
+    color: #426b3c;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+body > p:last-of-type a {
+    color: #e68b24;
+    text-decoration: none;
+    font-weight: 900;
+    transition: 0.3s;
+}
+
+body > p:last-of-type a:hover {
+    color: #bd6710;
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 25px 18px;
+    }
+
+    body::before {
+        font-size: 40px;
+        left: 3%;
+    }
+
+    body::after {
+        font-size: 45px;
+        right: 3%;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    #registroForm {
+        padding: 25px 20px;
+        border-radius: 22px;
+    }
+
+    #registroForm button {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,434 @@
+
+/* =========================================
+   ECOHUERTA - FICHA BOTÁNICA INFANTIL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: linear-gradient(135deg, #f1f9e9, #e2f3d7);
+    color: #365b38;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+header {
+    background: linear-gradient(135deg, #74c94f, #319b49);
+    color: white;
+    padding: 20px 35px 25px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 6px 15px rgba(46, 125, 50, 0.15);
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 20px 0 8px;
+    letter-spacing: 1px;
+    text-shadow: 2px 3px 0 rgba(0,0,0,0.1);
+}
+
+header h1::before {
+    content: "🌱 ";
+}
+
+header .co {
+    color: #ffe68a;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.barra-superior-depto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Botón volver */
+
+.btn-secundario {
+    background: #fff1a8;
+    color: #55742f;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #e0bd52;
+    transition: 0.3s;
+}
+
+.btn-secundario:hover {
+    background: #ffe477;
+    transform: translateY(-3px);
+}
+
+/* Información del usuario */
+
+.info-sesion-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#avatarPlanta {
+    background: #fff1a8;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
+
+.rol-pill {
+    background: #e5f5d7;
+    color: #34733c;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.contenedor-ficha-planta {
+    width: 92%;
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 4px solid #b5df99;
+    border-radius: 28px;
+    box-shadow: 0 9px 0 #d1e9bd,
+                0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   MENSAJES DE ESTADO
+========================================= */
+
+.estado-mensaje {
+    text-align: center;
+    padding: 25px;
+    color: #318447;
+    font-size: 17px;
+    font-weight: bold;
+    background: #f1f9e9;
+    border-radius: 15px;
+    border: 2px dashed #a5d88a;
+}
+
+/* =========================================
+   FICHA DE LA PLANTA
+========================================= */
+
+.ficha-planta {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* =========================================
+   IMAGEN DE LA PLANTA
+========================================= */
+
+.ficha-media {
+    background: #eaf6e7;
+    border: 3px solid #a5d88a;
+    border-radius: 22px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.img-ficha-planta {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.img-ficha-placeholder {
+    width: 100%;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #d9f0ca, #bce3a7);
+    border-radius: 16px;
+    font-size: 85px;
+}
+
+/* =========================================
+   ETIQUETAS
+========================================= */
+
+.etiquetas-planta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.badge-tipo {
+    background: #fff0b3;
+    color: #8b671a;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge-depto {
+    background: #d9f1cf;
+    color: #31783d;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================================
+   INFORMACIÓN DE LA PLANTA
+========================================= */
+
+.ficha-info {
+    padding: 5px;
+}
+
+.titulo-ficha {
+    color: #287a37;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 22px;
+    border-bottom: 3px solid #d8edcc;
+    padding-bottom: 12px;
+}
+
+/* Bloques de información */
+
+.bloque-ficha {
+    background: #f8fcf5;
+    border-left: 5px solid #75c94f;
+    padding: 15px 18px;
+    border-radius: 0 15px 15px 0;
+    margin-bottom: 16px;
+    transition: 0.3s;
+}
+
+.bloque-ficha:hover {
+    background: #eff8e9;
+    transform: translateX(4px);
+}
+
+.bloque-ficha h3 {
+    color: #318447;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.bloque-ficha h3::before {
+    content: "🌿 ";
+}
+
+.bloque-ficha p {
+    color: #60745c;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   RECURSOS RELACIONADOS
+========================================= */
+
+.recursos-ficha {
+    margin-top: 30px;
+    padding: 22px;
+    background: #f5faef;
+    border: 3px solid #c7e6b4;
+    border-radius: 22px;
+}
+
+.recursos-ficha h3 {
+    color: #287a37;
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.recursos-ficha h3::before {
+    content: "📚 ";
+}
+
+.lista-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+}
+
+/* Enlaces y botones dentro de los recursos */
+
+.lista-recursos a,
+.lista-recursos button {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    background: #e4f3dd;
+    color: #347b3e;
+    border: 2px solid #b5df99;
+    border-radius: 12px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lista-recursos a:hover,
+.lista-recursos button:hover {
+    background: #74c94f;
+    color: white;
+    border-color: #319b49;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+footer {
+    margin-top: auto;
+    background: linear-gradient(135deg, #388e45, #246b36);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 30px 30px 0 0;
+}
+
+footer p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+footer p::before {
+    content: "🌻 ";
+}
+
+/* =========================================
+   ADAPTACIÓN A TABLETS
+========================================= */
+
+@media (max-width: 800px) {
+
+    .ficha-planta {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha-media {
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-ficha-planta,
+    .img-ficha-placeholder {
+        height: 280px;
+    }
+
+    .titulo-ficha {
+        text-align: center;
+    }
+}
+
+/* =========================================
+   ADAPTACIÓN A CELULARES
+========================================= */
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 18px 15px 25px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .barra-superior-depto {
+        justify-content: center;
+    }
+
+    .info-sesion-mini {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenedor-ficha-planta {
+        width: 95%;
+        padding: 15px;
+        margin: 25px auto;
+        border-radius: 20px;
+    }
+
+    .img-ficha-planta,
+    .img-ficha-placeholder {
+        height: 230px;
+    }
+
+    .titulo-ficha {
+        font-size: 24px;
+    }
+
+    .bloque-ficha {
+        padding: 12px;
+    }
+
+    .bloque-ficha p {
+        font-size: 14px;
+    }
+
+    .recursos-ficha {
+        padding: 15px;
+    }
+
+    .lista-recursos {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>EcoHuerta - Registro</title>
+<link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+<h1>Registro de usuario</h1>
+
+<form id="registroForm">
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="usuario">Nombre de usuario</label>
+  <input type="text" id="usuario" name="usuario" required>
+
+  <label for="clave">Contraseña</label>
+  <input type="password" id="clave" name="clave" required>
+
+  <label for="rol">Rol</label>
+  <select id="rol" name="rol" required>
+    <option value="estudiante">Estudiante</option>
+    <option value="docente">Docente</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button type="submit">Registrarse</button>
+</form>
+
+<p id="mensaje"></p>
+<p><a href="login.html">¿Ya tienes cuenta? Inicia sesión</a></p>
+
+<script src="../JavaScript/registro.js"></script>
+</body>
+</html>

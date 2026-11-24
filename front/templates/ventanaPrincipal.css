@@ -1,0 +1,353 @@
+
+/* =================================
+   ECOHUERTA - DISEÑO INFANTIL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: #f1f9e9;
+    color: #365b38;
+    overflow-x: hidden;
+}
+
+/* =================================
+   ENCABEZADO
+================================= */
+
+header {
+    background: linear-gradient(135deg, #74c94f, #319b49);
+    padding: 25px 20px 40px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 7px 18px rgba(46, 125, 50, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 25px 0 10px;
+    letter-spacing: 3px;
+    text-shadow: 3px 4px 0 rgba(0,0,0,0.12);
+}
+
+header h1::before {
+    content: "🌱 ";
+}
+
+header .co {
+    color: #ffe66d;
+}
+
+header p {
+    font-size: 17px;
+    margin: 10px auto;
+    max-width: 750px;
+    line-height: 1.6;
+}
+
+#saludoRol {
+    display: inline-block;
+    background: #fff1a8;
+    color: #47772e;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 15px 0;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.08);
+}
+
+/* =================================
+   BARRA DE USUARIO
+================================= */
+
+.barra-usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgba(255,255,255,0.18);
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.avatar-badge {
+    width: 48px;
+    height: 48px;
+    background: #fff3b0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.info-usuario strong {
+    display: block;
+    font-size: 16px;
+}
+
+.rol-badge {
+    font-size: 12px;
+    background: #e5f5d7;
+    color: #34733c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.acciones-admin {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* =================================
+   BOTONES
+================================= */
+
+.btn-admin,
+.btn-salir {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-admin {
+    background: #ffe68a;
+    color: #66501a;
+    box-shadow: 0 4px 0 #e0bd52;
+}
+
+.btn-salir {
+    background: #ff927e;
+    color: white;
+    box-shadow: 0 4px 0 #dc695b;
+}
+
+.btn-admin:hover,
+.btn-salir:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+}
+
+/* =================================
+   TITULOS DE SECCIONES
+================================= */
+
+body > h2 {
+    text-align: center;
+    color: #318447;
+    font-size: 30px;
+    margin: 40px 15px 10px;
+}
+
+body > p {
+    text-align: center;
+    color: #688267;
+    font-size: 16px;
+    margin: 12px;
+}
+
+/* =================================
+   VIDEO EDUCATIVO
+================================= */
+
+.video-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 28px;
+    background: white;
+    border: 4px solid #b6df96;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 9px 0 #d1e9bd,
+                0 15px 25px rgba(0,0,0,0.08);
+}
+
+.video-container h2 {
+    color: #318447;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.video-container p {
+    color: #78936b;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 4px solid #d5edc4;
+    border-radius: 20px;
+}
+
+/* =================================
+   MAPA INTERACTIVO
+================================= */
+
+.contenedor-mapa {
+    position: relative;
+    width: 90%;
+    max-width: 750px;
+    margin: 35px auto;
+    background: white;
+    padding: 20px;
+    border: 5px solid #b5df99;
+    border-radius: 30px;
+    box-shadow: 0 9px 0 #91c875,
+                0 15px 30px rgba(0,0,0,0.09);
+}
+
+.mapa {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* =================================
+   DEPARTAMENTOS DEL MAPA
+================================= */
+
+.zona {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #ffbd35;
+    cursor: pointer;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.3);
+    transition: 0.25s;
+    animation: pulso 2s infinite;
+}
+
+.zona:hover {
+    background: #ff7043;
+    transform: scale(1.7);
+    z-index: 5;
+}
+
+.zona-islas {
+    background: #4db6e5;
+}
+
+@keyframes pulso {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255,189,53,0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(255,189,53,0);
+    }
+}
+
+/* =================================
+   PIE DE PAGINA
+================================= */
+
+footer {
+    margin-top: 50px;
+    padding: 30px 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #388e45, #246b36);
+    color: white;
+    border-radius: 35px 35px 0 0;
+}
+
+footer p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer p::before {
+    content: "🌻 ";
+}
+
+/* =================================
+   RESPONSIVE - CELULARES
+================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px 15px 30px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .barra-usuario {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .info-usuario {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .acciones-admin {
+        justify-content: center;
+    }
+
+    .btn-admin,
+    .btn-salir {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    body > h2 {
+        font-size: 24px;
+    }
+
+    .video-container {
+        width: 94%;
+        padding: 16px;
+    }
+
+    .video-container h2 {
+        font-size: 21px;
+    }
+
+    .contenedor-mapa {
+        width: 96%;
+        padding: 10px;
+    }
+
+    .zona {
+        width: 13px;
+        height: 13px;
+        border-width: 2px;
+    }
+}
